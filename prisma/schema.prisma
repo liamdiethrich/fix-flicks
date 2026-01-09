@@ -1,0 +1,73 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+enum RequestStatus {
+  new
+  planned
+  published
+  ignored
+}
+
+enum FeedbackVote {
+  yes
+  no
+}
+
+enum EventType {
+  page_view
+  outbound_click
+  add_to_cart
+  plan_add_to_cart
+  helpful_yes
+  helpful_no
+  search
+  fitfinder_result
+  request_submitted
+}
+
+model Event {
+  id          String   @id @default(cuid())
+  type        EventType
+  fixSlug     String?
+  planSlug    String?
+  asin        String?
+  query       String?
+  referrer    String?
+  utmSource   String?
+  utmMedium   String?
+  utmCampaign String?
+  utmContent  String?
+  userAgent   String?
+  createdAt   DateTime @default(now())
+}
+
+model Request {
+  id          String        @id @default(cuid())
+  room        String
+  problem     String
+  constraints String
+  email       String?
+  status      RequestStatus @default(new)
+  createdAt   DateTime      @default(now())
+}
+
+model Feedback {
+  id        String       @id @default(cuid())
+  fixSlug   String
+  vote      FeedbackVote
+  note      String?
+  createdAt DateTime     @default(now())
+}
+
+model AdminSession {
+  id        String   @id @default(cuid())
+  tokenHash String
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+}

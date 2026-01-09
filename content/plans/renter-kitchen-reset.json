@@ -1,0 +1,18 @@
+{
+  "slug": "renter-kitchen-reset",
+  "title": "Renter Kitchen Reset",
+  "summary": "A fast refresh plan for cabinets, drawers, and daily cooking flow.",
+  "audienceTags": ["renter", "kitchen", "organization"],
+  "fixSlugs": ["cabinet-drawer-stops", "desk-cable-tidy"],
+  "checklist": [
+    {"label": "Install drawer bumpers", "fixSlug": "cabinet-drawer-stops"},
+    {"label": "Tidy countertop cords", "fixSlug": "desk-cable-tidy"},
+    {"label": "Reset your drawer layout"}
+  ],
+  "updatedAt": "2025-01-12T08:00:00.000Z",
+  "seo": {
+    "title": "Renter Kitchen Reset Plan | FixFlicks",
+    "description": "A bundle of fixes to quiet cabinets and streamline the kitchen.",
+    "ogImage": "/images/og/renter-kitchen-reset.jpg"
+  }
+}

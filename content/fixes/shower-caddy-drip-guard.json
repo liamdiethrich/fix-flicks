@@ -1,0 +1,43 @@
+{
+  "slug": "shower-caddy-drip-guard",
+  "title": "Shower Caddy Drip Guard",
+  "summary": "Keep shower bottles from dripping on the floor with a simple guard and absorbent mat.",
+  "room": "bathroom",
+  "tags": ["shower", "water", "organization"],
+  "renterSafe": true,
+  "noDrill": true,
+  "timeMinutes": 25,
+  "difficulty": "easy",
+  "heroVideo": {
+    "src": "/videos/shower-caddy-drip-guard.mp4",
+    "poster": "/images/shower-caddy-drip-guard.jpg",
+    "durationSeconds": 22
+  },
+  "fitCheck": [
+    {"question": "Do you have a hanging shower caddy?", "recommendedIfYes": true},
+    {"question": "Is water dripping onto the floor after showers?", "recommendedIfYes": true},
+    {"question": "Can you wipe down the wall weekly?", "recommendedIfYes": true}
+  ],
+  "kit": [
+    {"asin": "B000000003", "name": "Silicone drip tray", "why": "Captures runoff from bottles.", "quantity": 1, "isPlaceholder": true},
+    {"asin": "B000000004", "name": "Quick-dry microfiber mat", "why": "Absorbs residual drips safely.", "quantity": 1, "isPlaceholder": true},
+    {"asin": "B000000005", "name": "Rust-resistant hooks", "why": "Keeps the caddy stable and level.", "quantity": 1, "isPlaceholder": true}
+  ],
+  "steps": [
+    "Hang the caddy at shoulder height so bottles sit level.",
+    "Place the drip tray under the lowest shelf.",
+    "Lay the microfiber mat on the tub edge or floor.",
+    "Wipe the tray weekly to avoid soap buildup."
+  ],
+  "mistakes": [
+    "Letting water pool without a mat can cause slip hazards.",
+    "Overloading the caddy makes it tilt and drip more."
+  ],
+  "faqs": [],
+  "updatedAt": "2025-01-08T12:00:00.000Z",
+  "seo": {
+    "title": "Shower Caddy Drip Guard | FixFlicks",
+    "description": "A simple kit to stop shower caddy drips and keep the floor dry.",
+    "ogImage": "/images/og/shower-caddy-drip-guard.jpg"
+  }
+}

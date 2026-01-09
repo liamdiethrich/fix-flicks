@@ -1,0 +1,45 @@
+{
+  "slug": "desk-cable-tidy",
+  "title": "Desk Cable Tidy Raceway",
+  "summary": "Hide desk cords with an adhesive raceway and reusable ties for a clean workspace.",
+  "room": "desk",
+  "tags": ["cables", "productivity", "organization"],
+  "renterSafe": true,
+  "noDrill": true,
+  "timeMinutes": 30,
+  "difficulty": "easy",
+  "heroVideo": {
+    "src": "/videos/desk-cable-tidy.mp4",
+    "poster": "/images/desk-cable-tidy.jpg",
+    "durationSeconds": 24
+  },
+  "fitCheck": [
+    {"question": "Are your cords hanging below the desktop?", "recommendedIfYes": true},
+    {"question": "Do you want the fix to be removable?", "recommendedIfYes": true},
+    {"question": "Do you have a smooth desk underside?", "recommendedIfYes": true}
+  ],
+  "kit": [
+    {"asin": "B000000006", "name": "Adhesive cable raceway", "why": "Creates a tidy channel for cables.", "quantity": 1, "isPlaceholder": true},
+    {"asin": "B000000007", "name": "Reusable cable ties", "why": "Bundle cords without cutting.", "quantity": 1, "isPlaceholder": true},
+    {"asin": "B000000008", "name": "Mini power strip mount", "why": "Lifts the power strip off the floor.", "quantity": 1, "isPlaceholder": true}
+  ],
+  "steps": [
+    "Unplug devices and lay cords in the order you use them.",
+    "Mount the raceway under the desk following the cable path.",
+    "Bundle cords with reusable ties and feed them into the raceway.",
+    "Mount the power strip and keep a service loop near outlets."
+  ],
+  "mistakes": [
+    "Mounting the raceway too close to the edge makes it visible.",
+    "Over-tightening ties can strain cable connectors."
+  ],
+  "faqs": [
+    {"q": "Will adhesive damage the desk?", "a": "Warm the adhesive with a hairdryer before removal to reduce residue."}
+  ],
+  "updatedAt": "2025-01-05T15:30:00.000Z",
+  "seo": {
+    "title": "Desk Cable Tidy Raceway | FixFlicks",
+    "description": "A renter-safe kit for hiding desk cables with adhesive raceways.",
+    "ogImage": "/images/og/desk-cable-tidy.jpg"
+  }
+}

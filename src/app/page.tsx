@@ -1,65 +1,126 @@
-import Image from "next/image";
+import Link from "next/link";
+import SearchBar from "@/components/SearchBar";
+import FixCard from "@/components/FixCard";
+import { getAllFixes } from "@/lib/content";
+import { prisma } from "@/lib/prisma";
 
-export default function Home() {
+export default async function Home() {
+  const fixes = getAllFixes();
+  const newest = fixes
+    .slice()
+    .sort((a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime())
+    .slice(0, 3);
+  const renterSafe = fixes.filter((fix) => fix.renterSafe).slice(0, 3);
+
+  const since = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
+  const trendingEvents = await prisma.event.groupBy({
+    by: ["fixSlug"],
+    where: {
+      fixSlug: { not: null },
+      createdAt: { gte: since },
+    },
+    _count: { fixSlug: true },
+    orderBy: { _count: { fixSlug: "desc" } },
+    take: 3,
+  });
+  const trending = trendingEvents
+    .map((event) => fixes.find((fix) => fix.slug === event.fixSlug))
+    .filter((fix): fix is NonNullable<typeof fix> => Boolean(fix));
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="bg-slate-50">
+      <section className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-4 py-16 md:flex-row md:items-center md:gap-16 md:px-6">
+        <div className="flex-1 space-y-6">
+          <p className="text-sm font-semibold uppercase tracking-wide text-emerald-600">FixFlicks</p>
+          <h1 className="text-4xl font-semibold tracking-tight text-slate-900 md:text-5xl">
+            Tiny videos. Real fixes.
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="text-lg text-slate-600">
+            Curated fix kits that help renters and busy households solve the small things fast—without guessing.
           </p>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/fixes" className="rounded-full bg-slate-900 px-5 py-3 text-sm font-semibold text-white">
+              Browse Fixes
+            </Link>
+            <Link href="/fitfinder" className="rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold">
+              Take FitFinder
+            </Link>
+            <Link href="/plans" className="rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold">
+              View Plans
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div className="flex-1 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h2 className="text-lg font-semibold text-slate-900">Find a fix fast</h2>
+          <p className="mt-2 text-sm text-slate-600">
+            Search by room, problem, or tag. We will point you to the best kit.
+          </p>
+          <div className="mt-4">
+            <SearchBar />
+          </div>
         </div>
-      </main>
+      </section>
+
+      <section className="mx-auto w-full max-w-6xl space-y-8 px-4 pb-16 md:px-6">
+        <div className="space-y-2">
+          <h2 className="text-2xl font-semibold text-slate-900">Trending this week</h2>
+          <p className="text-sm text-slate-600">Based on real fix kit clicks in the last 7 days.</p>
+        </div>
+        <div className="grid gap-6 md:grid-cols-3">
+          {trending.length ? trending.map((fix) => <FixCard key={fix.slug} fix={fix} />) : fixes.slice(0, 3).map((fix) => <FixCard key={fix.slug} fix={fix} />)}
+        </div>
+      </section>
+
+      <section className="mx-auto w-full max-w-6xl space-y-8 px-4 pb-16 md:px-6">
+        <div className="space-y-2">
+          <h2 className="text-2xl font-semibold text-slate-900">Newest fixes</h2>
+          <p className="text-sm text-slate-600">Fresh fixes with updated kits and steps.</p>
+        </div>
+        <div className="grid gap-6 md:grid-cols-3">
+          {newest.map((fix) => (
+            <FixCard key={fix.slug} fix={fix} />
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto w-full max-w-6xl space-y-8 px-4 pb-16 md:px-6">
+        <div className="space-y-2">
+          <h2 className="text-2xl font-semibold text-slate-900">Popular with renters</h2>
+          <p className="text-sm text-slate-600">No-drill or renter-safe kits that move with you.</p>
+        </div>
+        <div className="grid gap-6 md:grid-cols-3">
+          {renterSafe.map((fix) => (
+            <FixCard key={fix.slug} fix={fix} />
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-white">
+        <div className="mx-auto w-full max-w-6xl space-y-6 px-4 py-16 md:px-6">
+          <h2 className="text-2xl font-semibold text-slate-900">How it works</h2>
+          <div className="grid gap-6 md:grid-cols-3">
+            {[
+              {
+                title: "Pick a fix",
+                body: "Browse vetted fixes with clear fit checks and simple steps.",
+              },
+              {
+                title: "Open the kit",
+                body: "Every fix includes a smart kit list you can add to Amazon in one click.",
+              },
+              {
+                title: "Get it done",
+                body: "Follow the steps, avoid common mistakes, and keep your space running smoothly.",
+              },
+            ].map((item) => (
+              <div key={item.title} className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+                <h3 className="text-lg font-semibold text-slate-900">{item.title}</h3>
+                <p className="mt-2 text-sm text-slate-600">{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

@@ -1,0 +1,18 @@
+{
+  "slug": "entryway-calm",
+  "title": "Entryway Calm Plan",
+  "summary": "A simple plan to stop clutter and keep shoes and gear in one place.",
+  "audienceTags": ["entryway", "small-space", "family"],
+  "fixSlugs": ["entryway-shoe-drop", "shower-caddy-drip-guard"],
+  "checklist": [
+    {"label": "Set up the shoe drop zone", "fixSlug": "entryway-shoe-drop"},
+    {"label": "Add a drip-catching tray", "fixSlug": "shower-caddy-drip-guard"},
+    {"label": "Post a weekly reset reminder"}
+  ],
+  "updatedAt": "2025-01-06T07:00:00.000Z",
+  "seo": {
+    "title": "Entryway Calm Plan | FixFlicks",
+    "description": "Create a tidy entryway with curated fixes.",
+    "ogImage": "/images/og/entryway-calm.jpg"
+  }
+}
