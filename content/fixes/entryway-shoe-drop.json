@@ -1,0 +1,45 @@
+{
+  "slug": "entryway-shoe-drop",
+  "title": "Entryway Shoe Drop Zone",
+  "summary": "Create a tidy drop zone with a slim rack, boot tray, and label system that keeps pairs together.",
+  "room": "entryway",
+  "tags": ["shoes", "organization", "small-space"],
+  "renterSafe": true,
+  "noDrill": true,
+  "timeMinutes": 25,
+  "difficulty": "easy",
+  "heroVideo": {
+    "src": "/videos/entryway-shoe-drop.mp4",
+    "poster": "/images/entryway-shoe-drop.jpg",
+    "durationSeconds": 20
+  },
+  "fitCheck": [
+    {"question": "Do shoes pile up near the door?", "recommendedIfYes": true},
+    {"question": "Is your entryway under 4 feet wide?", "recommendedIfYes": true},
+    {"question": "Do you want to avoid wall mounting?", "recommendedIfYes": true}
+  ],
+  "kit": [
+    {"asin": "B000000012", "name": "Slim 3-tier shoe rack", "why": "Keeps everyday pairs upright.", "quantity": 1, "isPlaceholder": true},
+    {"asin": "B000000013", "name": "Waterproof boot tray", "why": "Catches dirt and moisture.", "quantity": 1, "isPlaceholder": true},
+    {"asin": "B000000014", "name": "Removable label tags", "why": "Assigns spots for each person.", "quantity": 1, "isPlaceholder": true}
+  ],
+  "steps": [
+    "Place the boot tray closest to the door for wet shoes.",
+    "Assemble the rack and keep the top tier for daily pairs.",
+    "Add label tags to each slot so shoes return to the same spot.",
+    "Do a weekly reset to keep the drop zone clear."
+  ],
+  "mistakes": [
+    "Overfilling the rack makes shoes harder to grab.",
+    "Skipping the tray lets moisture damage floors."
+  ],
+  "faqs": [
+    {"q": "Can this handle boots?", "a": "Use the boot tray for tall boots and keep them upright."}
+  ],
+  "updatedAt": "2024-12-28T09:45:00.000Z",
+  "seo": {
+    "title": "Entryway Shoe Drop Zone | FixFlicks",
+    "description": "A renter-safe entryway fix to stop shoe clutter.",
+    "ogImage": "/images/og/entryway-shoe-drop.jpg"
+  }
+}

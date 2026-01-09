@@ -1,0 +1,45 @@
+{
+  "slug": "cabinet-drawer-stops",
+  "title": "Quiet Cabinet Drawer Stops",
+  "summary": "Stop drawers from slamming and protect cabinet frames with simple adhesive bumpers and felt pads.",
+  "room": "kitchen",
+  "tags": ["noise", "cabinet", "soft-close"],
+  "renterSafe": true,
+  "noDrill": true,
+  "timeMinutes": 20,
+  "difficulty": "easy",
+  "heroVideo": {
+    "src": "/videos/cabinet-drawer-stops.mp4",
+    "poster": "/images/cabinet-drawer-stops.jpg",
+    "durationSeconds": 18
+  },
+  "fitCheck": [
+    {"question": "Do your drawers hit the cabinet frame when closing?", "recommendedIfYes": true},
+    {"question": "Is there a flat surface inside the drawer front?", "recommendedIfYes": true},
+    {"question": "Are you avoiding drilling hardware?", "recommendedIfYes": true}
+  ],
+  "kit": [
+    {"asin": "B000000000", "name": "Clear cabinet bumper pads", "why": "Soft landing to reduce impact noise.", "quantity": 1, "isPlaceholder": true},
+    {"asin": "B000000001", "name": "Felt circle pads", "why": "Extra cushioning for heavier drawers.", "quantity": 1, "isPlaceholder": true},
+    {"asin": "B000000002", "name": "Surface prep wipes", "why": "Improve adhesive grip on wood finishes.", "quantity": 1, "isPlaceholder": true}
+  ],
+  "steps": [
+    "Clean the inside corners of the drawer frame with prep wipes.",
+    "Place bumper pads on the inside frame where the drawer front meets.",
+    "Add felt pads to the drawer front if you need more cushioning.",
+    "Close the drawer slowly and adjust pad placement for an even stop."
+  ],
+  "mistakes": [
+    "Skipping surface cleaning can cause pads to fall off.",
+    "Over-stacking pads can prevent drawers from closing fully."
+  ],
+  "faqs": [
+    {"q": "Will the pads damage the finish?", "a": "Most adhesive pads remove cleanly when pulled slowly at a low angle."}
+  ],
+  "updatedAt": "2025-01-10T10:00:00.000Z",
+  "seo": {
+    "title": "Quiet Cabinet Drawer Stops | FixFlicks",
+    "description": "A renter-safe kit to stop drawer slams with clear bumpers and felt pads.",
+    "ogImage": "/images/og/cabinet-drawer-stops.jpg"
+  }
+}
