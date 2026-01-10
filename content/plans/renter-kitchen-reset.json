@@ -1,18 +1,19 @@
 {
   "slug": "renter-kitchen-reset",
   "title": "Renter Kitchen Reset",
-  "summary": "A fast refresh plan for cabinets, drawers, and daily cooking flow.",
-  "audienceTags": ["renter", "kitchen", "organization"],
-  "fixSlugs": ["cabinet-drawer-stops", "desk-cable-tidy"],
+  "summary": "Quiet drawers, stop splashes, and label pantry zones with a renter-safe kit.",
+  "audienceTags": ["kitchen", "renterSafe"],
+  "fixSlugs": ["cabinet-drawer-stops", "sink-splash-guard", "pantry-shelf-labels", "fridge-organizer-risers"],
   "checklist": [
     {"label": "Install drawer bumpers", "fixSlug": "cabinet-drawer-stops"},
-    {"label": "Tidy countertop cords", "fixSlug": "desk-cable-tidy"},
-    {"label": "Reset your drawer layout"}
+    {"label": "Add a sink splash guard", "fixSlug": "sink-splash-guard"},
+    {"label": "Set pantry labels", "fixSlug": "pantry-shelf-labels"},
+    {"label": "Add fridge risers", "fixSlug": "fridge-organizer-risers"}
   ],
-  "updatedAt": "2025-01-12T08:00:00.000Z",
+  "updatedAt": "2025-02-06T22:30:00.000Z",
   "seo": {
-    "title": "Renter Kitchen Reset Plan | FixFlicks",
-    "description": "A bundle of fixes to quiet cabinets and streamline the kitchen.",
+    "title": "Renter Kitchen Reset | FixFlicks",
+    "description": "A renter-safe kitchen plan with quiet drawers and tidy storage.",
     "ogImage": "/images/og/renter-kitchen-reset.jpg"
   }
 }

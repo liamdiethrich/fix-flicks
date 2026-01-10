@@ -1,0 +1,18 @@
+{
+  "slug": "bathroom-refresh",
+  "title": "Bathroom Refresh Plan",
+  "summary": "Reset the bathroom with drip control, a tray system, and no-drill storage.",
+  "audienceTags": ["bathroom", "renterSafe"],
+  "fixSlugs": ["shower-caddy-drip-guard", "bathroom-counter-tray", "toilet-paper-holder-no-drill"],
+  "checklist": [
+    {"label": "Add the shower drip guard", "fixSlug": "shower-caddy-drip-guard"},
+    {"label": "Set up the counter tray", "fixSlug": "bathroom-counter-tray"},
+    {"label": "Install the no-drill holder", "fixSlug": "toilet-paper-holder-no-drill"}
+  ],
+  "updatedAt": "2025-02-06T23:00:00.000Z",
+  "seo": {
+    "title": "Bathroom Refresh Plan | FixFlicks",
+    "description": "A renter-safe plan to reduce drips and keep bathroom counters organized.",
+    "ogImage": "/images/og/bathroom-refresh.jpg"
+  }
+}

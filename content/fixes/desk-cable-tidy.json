@@ -18,14 +18,34 @@
     {"question": "Do you want the fix to be removable?", "recommendedIfYes": true},
     {"question": "Do you have a smooth desk underside?", "recommendedIfYes": true}
   ],
-  "kit": [
-    {"asin": "B000000006", "name": "Adhesive cable raceway", "why": "Creates a tidy channel for cables.", "quantity": 1, "isPlaceholder": true},
-    {"asin": "B000000007", "name": "Reusable cable ties", "why": "Bundle cords without cutting.", "quantity": 1, "isPlaceholder": true},
-    {"asin": "B000000008", "name": "Mini power strip mount", "why": "Lifts the power strip off the floor.", "quantity": 1, "isPlaceholder": true}
+  "kitOptions": [
+    {
+      "tier": "budget",
+      "label": "Starter cable tidy for light setups",
+      "items": [
+        {"asin": "B000000006", "name": "Adhesive cable clips", "why": "Routes a few cables without drilling.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000007", "name": "Reusable cable ties", "why": "Bundles cords without cutting.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000008", "name": "Command cord clip pack", "why": "Adds extra routing points.", "quantity": 1, "isPlaceholder": true}
+      ]
+    },
+    {
+      "tier": "best",
+      "label": "Full raceway + mount kit",
+      "items": [
+        {"asin": "B000000009", "name": "Adhesive cable raceway", "why": "Creates a tidy channel for cables.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000010", "name": "Reusable cable ties", "why": "Bundle cords without cutting.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000011", "name": "Power strip mount", "why": "Lifts the power strip off the floor.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000012", "name": "Velcro cable sleeve", "why": "Hides extra cable slack.", "quantity": 1, "isPlaceholder": true}
+      ]
+    }
   ],
+  "toolsNeeded": ["Microfiber cloth", "Ruler or tape measure"],
+  "measurements": ["Measure underside depth for raceway", "Check cable slack length"],
+  "removalNotes": ["Warm adhesive with a hairdryer before peeling", "Use citrus-based remover for residue"],
   "steps": [
     "Unplug devices and lay cords in the order you use them.",
-    "Mount the raceway under the desk following the cable path.",
+    "Wipe the desk underside so adhesive sticks evenly.",
+    "Mount the raceway or clips following the cable path.",
     "Bundle cords with reusable ties and feed them into the raceway.",
     "Mount the power strip and keep a service loop near outlets."
   ],
@@ -36,7 +56,7 @@
   "faqs": [
     {"q": "Will adhesive damage the desk?", "a": "Warm the adhesive with a hairdryer before removal to reduce residue."}
   ],
-  "updatedAt": "2025-01-05T15:30:00.000Z",
+  "updatedAt": "2025-02-01T15:30:00.000Z",
   "seo": {
     "title": "Desk Cable Tidy Raceway | FixFlicks",
     "description": "A renter-safe kit for hiding desk cables with adhesive raceways.",

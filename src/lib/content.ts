@@ -1,22 +1,29 @@
 import fs from "node:fs";
 import path from "node:path";
 import { FixSchema, PlanSchema, type Fix, type Plan } from "./schemas";
+import { getKitOptionsForFix } from "./fixKits";
 
 const fixesDirectory = path.join(process.cwd(), "content", "fixes");
 const plansDirectory = path.join(process.cwd(), "content", "plans");
 
-let cachedFixes: Fix[] | null = null;
+export type FixWithKits = Fix & { kitOptions: ReturnType<typeof getKitOptionsForFix> };
+
+let cachedFixes: FixWithKits[] | null = null;
 let cachedPlans: Plan[] | null = null;
 
-export function loadFixesFrom(directory: string): Fix[] {
+export function loadFixesFrom(directory: string): FixWithKits[] {
   const files = fs.readdirSync(directory).filter((file) => file.endsWith(".json"));
   return files.map((file) => {
     const raw = fs.readFileSync(path.join(directory, file), "utf8");
-    return FixSchema.parse(JSON.parse(raw));
+    const parsed = FixSchema.parse(JSON.parse(raw));
+    return {
+      ...parsed,
+      kitOptions: getKitOptionsForFix(parsed),
+    };
   });
 }
 
-export function loadPlansFrom(directory: string, fixes: Fix[]): Plan[] {
+export function loadPlansFrom(directory: string, fixes: FixWithKits[]): Plan[] {
   const files = fs.readdirSync(directory).filter((file) => file.endsWith(".json"));
   const plans = files.map((file) => {
     const raw = fs.readFileSync(path.join(directory, file), "utf8");
@@ -33,7 +40,7 @@ export function loadPlansFrom(directory: string, fixes: Fix[]): Plan[] {
   return plans;
 }
 
-function loadFixes(): Fix[] {
+function loadFixes(): FixWithKits[] {
   if (cachedFixes) {
     return cachedFixes;
   }
@@ -51,11 +58,11 @@ function loadPlans(): Plan[] {
   return plans;
 }
 
-export function getAllFixes(): Fix[] {
+export function getAllFixes(): FixWithKits[] {
   return loadFixes().slice();
 }
 
-export function getFixBySlug(slug: string): Fix | undefined {
+export function getFixBySlug(slug: string): FixWithKits | undefined {
   return loadFixes().find((fix) => fix.slug === slug);
 }
 
@@ -67,7 +74,7 @@ export function getPlanBySlug(slug: string): Plan | undefined {
   return loadPlans().find((plan) => plan.slug === slug);
 }
 
-export function searchFixes(query: string): Fix[] {
+export function searchFixes(query: string): FixWithKits[] {
   const normalized = query.trim().toLowerCase();
   if (!normalized) {
     return [];
@@ -86,7 +93,7 @@ type FilterOptions = {
   tag?: string;
 };
 
-export function filterFixes(filters: FilterOptions): Fix[] {
+export function filterFixes(filters: FilterOptions): FixWithKits[] {
   return loadFixes().filter((fix) => {
     if (filters.room && fix.room !== filters.room) return false;
     if (filters.renterSafe !== undefined && fix.renterSafe !== filters.renterSafe) return false;

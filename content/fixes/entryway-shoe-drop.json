@@ -1,12 +1,12 @@
 {
   "slug": "entryway-shoe-drop",
   "title": "Entryway Shoe Drop Zone",
-  "summary": "Create a tidy drop zone with a slim rack, boot tray, and label system that keeps pairs together.",
+  "summary": "Create a low-profile shoe landing zone that keeps floors clear.",
   "room": "entryway",
-  "tags": ["shoes", "organization", "small-space"],
+  "tags": ["entryway", "shoes", "organization"],
   "renterSafe": true,
   "noDrill": true,
-  "timeMinutes": 25,
+  "timeMinutes": 20,
   "difficulty": "easy",
   "heroVideo": {
     "src": "/videos/entryway-shoe-drop.mp4",
@@ -14,32 +14,50 @@
     "durationSeconds": 20
   },
   "fitCheck": [
-    {"question": "Do shoes pile up near the door?", "recommendedIfYes": true},
-    {"question": "Is your entryway under 4 feet wide?", "recommendedIfYes": true},
-    {"question": "Do you want to avoid wall mounting?", "recommendedIfYes": true}
+    {"question": "Do shoes pile up by the door?", "recommendedIfYes": true},
+    {"question": "Do you need a slim solution?", "recommendedIfYes": true},
+    {"question": "Is your entryway renter-safe only?", "recommendedIfYes": true}
   ],
-  "kit": [
-    {"asin": "B000000012", "name": "Slim 3-tier shoe rack", "why": "Keeps everyday pairs upright.", "quantity": 1, "isPlaceholder": true},
-    {"asin": "B000000013", "name": "Waterproof boot tray", "why": "Catches dirt and moisture.", "quantity": 1, "isPlaceholder": true},
-    {"asin": "B000000014", "name": "Removable label tags", "why": "Assigns spots for each person.", "quantity": 1, "isPlaceholder": true}
+  "kitOptions": [
+    {
+      "tier": "budget",
+      "label": "Slim mat + tray combo",
+      "items": [
+        {"asin": "B000000040", "name": "Boot tray", "why": "Catches dirt and drips.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000041", "name": "Non-slip entry mat", "why": "Defines the drop zone.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000042", "name": "Label tags", "why": "Assigns spots for roommates.", "quantity": 1, "isPlaceholder": true}
+      ]
+    },
+    {
+      "tier": "best",
+      "label": "Tray + slim rack",
+      "items": [
+        {"asin": "B000000043", "name": "Low-profile shoe rack", "why": "Stacks pairs off the floor.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000044", "name": "Boot tray", "why": "Catches dirt and water.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000045", "name": "Entryway mat", "why": "Defines the drop zone.", "quantity": 1, "isPlaceholder": true}
+      ]
+    }
   ],
+  "toolsNeeded": ["Measuring tape"],
+  "measurements": ["Measure entryway width", "Check door swing clearance"],
+  "removalNotes": ["Shake mats outdoors", "Wipe tray with warm soapy water"],
   "steps": [
-    "Place the boot tray closest to the door for wet shoes.",
-    "Assemble the rack and keep the top tier for daily pairs.",
-    "Add label tags to each slot so shoes return to the same spot.",
-    "Do a weekly reset to keep the drop zone clear."
+    "Measure the door swing and pick a clear corner.",
+    "Place the boot tray to catch water and dirt.",
+    "Add the mat or rack behind the tray for overflow.",
+    "Set a rule: every pair lands in the zone before walking in."
   ],
   "mistakes": [
-    "Overfilling the rack makes shoes harder to grab.",
-    "Skipping the tray lets moisture damage floors."
+    "Using a rack deeper than the door clearance.",
+    "Skipping a tray leads to wet floors." 
   ],
   "faqs": [
-    {"q": "Can this handle boots?", "a": "Use the boot tray for tall boots and keep them upright."}
+    {"q": "Will this work for kids?", "a": "Yes—use labeled spots to make it a habit."}
   ],
-  "updatedAt": "2024-12-28T09:45:00.000Z",
+  "updatedAt": "2025-02-04T09:00:00.000Z",
   "seo": {
     "title": "Entryway Shoe Drop Zone | FixFlicks",
-    "description": "A renter-safe entryway fix to stop shoe clutter.",
+    "description": "A renter-safe kit for creating a tidy entryway shoe drop zone.",
     "ogImage": "/images/og/entryway-shoe-drop.jpg"
   }
 }

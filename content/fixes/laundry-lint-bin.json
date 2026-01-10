@@ -1,0 +1,63 @@
+{
+  "slug": "laundry-lint-bin",
+  "title": "Laundry Lint Bin Setup",
+  "summary": "Catch lint and dryer sheets with a small bin and liner system.",
+  "room": "laundry",
+  "tags": ["laundry", "cleanup", "organization"],
+  "renterSafe": true,
+  "noDrill": true,
+  "timeMinutes": 10,
+  "difficulty": "easy",
+  "heroVideo": {
+    "src": "/videos/laundry-lint-bin.mp4",
+    "poster": "/images/laundry-lint-bin.jpg",
+    "durationSeconds": 14
+  },
+  "fitCheck": [
+    {"question": "Do lint balls end up on the floor?", "recommendedIfYes": true},
+    {"question": "Is there space near the dryer for a small bin?", "recommendedIfYes": true},
+    {"question": "Do you want a mess-free lint routine?", "recommendedIfYes": true}
+  ],
+  "kitOptions": [
+    {
+      "tier": "budget",
+      "label": "Simple lint catcher",
+      "items": [
+        {"asin": "B000000096", "name": "Slim step trash bin", "why": "Keeps lint contained.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000097", "name": "Mini trash liners", "why": "Quick weekly swaps.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000098", "name": "Lint brush", "why": "Sweeps lint from the dryer rim.", "quantity": 1, "isPlaceholder": true}
+      ]
+    },
+    {
+      "tier": "best",
+      "label": "Lint + detergent station",
+      "items": [
+        {"asin": "B000000099", "name": "Slim trash bin", "why": "Contains lint and dryer sheets.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000100", "name": "Laundry caddy tray", "why": "Holds detergent tools.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000101", "name": "Lint brush", "why": "Sweeps lint from the dryer rim.", "quantity": 1, "isPlaceholder": true}
+      ]
+    }
+  ],
+  "toolsNeeded": ["Cleaning cloth"],
+  "measurements": ["Measure space beside dryer"],
+  "removalNotes": ["Wipe bin weekly", "Replace liners regularly"],
+  "steps": [
+    "Place the bin within arm's reach of the dryer.",
+    "Add a liner and keep it slightly open.",
+    "Brush lint from the dryer rim into the bin.",
+    "Empty weekly to avoid buildup."
+  ],
+  "mistakes": [
+    "Putting the bin too far away reduces usage.",
+    "Ignoring weekly emptying leads to overflow." 
+  ],
+  "faqs": [
+    {"q": "Can I use a hanging bin?", "a": "Yes—choose a bin with a secure hook and keep it near the dryer."}
+  ],
+  "updatedAt": "2025-02-06T16:30:00.000Z",
+  "seo": {
+    "title": "Laundry Lint Bin Setup | FixFlicks",
+    "description": "A simple lint bin setup that keeps laundry rooms clean.",
+    "ogImage": "/images/og/laundry-lint-bin.jpg"
+  }
+}

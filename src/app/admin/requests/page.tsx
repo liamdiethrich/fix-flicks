@@ -1,14 +1,28 @@
 import { requireAdmin } from "@/lib/adminAuth";
+import DbInitBanner from "@/components/DbInitBanner";
 import { prisma } from "@/lib/prisma";
+import { shouldShowDbInitBanner } from "@/lib/db";
 
 export default async function AdminRequestsPage() {
-  await requireAdmin();
-  const requests = await prisma.request.findMany({
-    orderBy: { createdAt: "desc" },
-  });
+  let dbNotInitialized = false;
+  let requests: Awaited<ReturnType<typeof prisma.request.findMany>> = [];
+
+  try {
+    await requireAdmin();
+    requests = await prisma.request.findMany({
+      orderBy: { createdAt: "desc" },
+    });
+  } catch (error) {
+    if (shouldShowDbInitBanner(error)) {
+      dbNotInitialized = true;
+    } else {
+      throw error;
+    }
+  }
 
   return (
     <div className="bg-slate-50">
+      <DbInitBanner show={dbNotInitialized} />
       <div className="mx-auto w-full max-w-5xl space-y-6 px-4 py-12 md:px-6">
         <h1 className="text-3xl font-semibold text-slate-900">Requests</h1>
         <div className="space-y-4">

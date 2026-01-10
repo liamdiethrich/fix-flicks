@@ -1,43 +1,63 @@
 {
   "slug": "shower-caddy-drip-guard",
   "title": "Shower Caddy Drip Guard",
-  "summary": "Keep shower bottles from dripping on the floor with a simple guard and absorbent mat.",
+  "summary": "Stop shampoo drips with a drip tray and squeegee routine.",
   "room": "bathroom",
-  "tags": ["shower", "water", "organization"],
+  "tags": ["bathroom", "cleanup", "renterSafe"],
   "renterSafe": true,
   "noDrill": true,
-  "timeMinutes": 25,
+  "timeMinutes": 15,
   "difficulty": "easy",
   "heroVideo": {
     "src": "/videos/shower-caddy-drip-guard.mp4",
     "poster": "/images/shower-caddy-drip-guard.jpg",
-    "durationSeconds": 22
+    "durationSeconds": 16
   },
   "fitCheck": [
-    {"question": "Do you have a hanging shower caddy?", "recommendedIfYes": true},
-    {"question": "Is water dripping onto the floor after showers?", "recommendedIfYes": true},
-    {"question": "Can you wipe down the wall weekly?", "recommendedIfYes": true}
+    {"question": "Does your shower caddy drip onto the tub?", "recommendedIfYes": true},
+    {"question": "Do you want a renter-safe fix?", "recommendedIfYes": true},
+    {"question": "Is there space for a small tray?", "recommendedIfYes": true}
   ],
-  "kit": [
-    {"asin": "B000000003", "name": "Silicone drip tray", "why": "Captures runoff from bottles.", "quantity": 1, "isPlaceholder": true},
-    {"asin": "B000000004", "name": "Quick-dry microfiber mat", "why": "Absorbs residual drips safely.", "quantity": 1, "isPlaceholder": true},
-    {"asin": "B000000005", "name": "Rust-resistant hooks", "why": "Keeps the caddy stable and level.", "quantity": 1, "isPlaceholder": true}
+  "kitOptions": [
+    {
+      "tier": "budget",
+      "label": "Drip control essentials",
+      "items": [
+        {"asin": "B000000050", "name": "Small silicone drip tray", "why": "Catches daily drips.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000051", "name": "Mini squeegee", "why": "Keeps surfaces dry.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000052", "name": "Microfiber cloth set", "why": "Quick wipe-downs.", "quantity": 1, "isPlaceholder": true}
+      ]
+    },
+    {
+      "tier": "best",
+      "label": "Upgrade with caddy liners",
+      "items": [
+        {"asin": "B000000053", "name": "Silicone drip tray", "why": "Catches overflow from bottles.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000054", "name": "Caddy liner sheet", "why": "Stops bottles from dripping.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000055", "name": "Mini squeegee", "why": "Keeps surfaces dry.", "quantity": 1, "isPlaceholder": true}
+      ]
+    }
   ],
+  "toolsNeeded": ["Cleaning cloth"],
+  "measurements": ["Measure caddy footprint", "Check shelf spacing"],
+  "removalNotes": ["Rinse tray weekly", "Wipe surfaces with warm water"],
   "steps": [
-    "Hang the caddy at shoulder height so bottles sit level.",
-    "Place the drip tray under the lowest shelf.",
-    "Lay the microfiber mat on the tub edge or floor.",
-    "Wipe the tray weekly to avoid soap buildup."
+    "Remove bottles and clean the shower caddy.",
+    "Place the drip tray or liner under the bottles.",
+    "Return bottles and check for stability.",
+    "Squeegee the shower after each use to stay ahead of buildup."
   ],
   "mistakes": [
-    "Letting water pool without a mat can cause slip hazards.",
-    "Overloading the caddy makes it tilt and drip more."
+    "Letting water pool under bottles.",
+    "Skipping weekly rinse lets soap scum build up." 
   ],
-  "faqs": [],
-  "updatedAt": "2025-01-08T12:00:00.000Z",
+  "faqs": [
+    {"q": "Will this work on a wire caddy?", "a": "Yes—use a liner sheet to create a flat base."}
+  ],
+  "updatedAt": "2025-02-05T11:20:00.000Z",
   "seo": {
     "title": "Shower Caddy Drip Guard | FixFlicks",
-    "description": "A simple kit to stop shower caddy drips and keep the floor dry.",
+    "description": "A renter-safe kit to stop shampoo drips and keep showers cleaner.",
     "ogImage": "/images/og/shower-caddy-drip-guard.jpg"
   }
 }

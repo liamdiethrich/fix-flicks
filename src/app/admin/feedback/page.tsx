@@ -1,20 +1,34 @@
 import { requireAdmin } from "@/lib/adminAuth";
+import DbInitBanner from "@/components/DbInitBanner";
 import { prisma } from "@/lib/prisma";
+import { shouldShowDbInitBanner } from "@/lib/db";
 
 export default async function AdminFeedbackPage({
   searchParams,
 }: {
   searchParams: Record<string, string | string[] | undefined>;
 }) {
-  await requireAdmin();
   const fixSlug = typeof searchParams.fixSlug === "string" ? searchParams.fixSlug : undefined;
-  const feedback = await prisma.feedback.findMany({
-    where: fixSlug ? { fixSlug } : undefined,
-    orderBy: { createdAt: "desc" },
-  });
+  let dbNotInitialized = false;
+  let feedback: Awaited<ReturnType<typeof prisma.feedback.findMany>> = [];
+
+  try {
+    await requireAdmin();
+    feedback = await prisma.feedback.findMany({
+      where: fixSlug ? { fixSlug } : undefined,
+      orderBy: { createdAt: "desc" },
+    });
+  } catch (error) {
+    if (shouldShowDbInitBanner(error)) {
+      dbNotInitialized = true;
+    } else {
+      throw error;
+    }
+  }
 
   return (
     <div className="bg-slate-50">
+      <DbInitBanner show={dbNotInitialized} />
       <div className="mx-auto w-full max-w-5xl space-y-6 px-4 py-12 md:px-6">
         <h1 className="text-3xl font-semibold text-slate-900">Feedback</h1>
         <form className="flex items-end gap-2" action="/admin/feedback" method="get">

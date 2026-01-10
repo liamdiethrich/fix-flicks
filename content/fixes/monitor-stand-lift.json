@@ -1,0 +1,63 @@
+{
+  "slug": "monitor-stand-lift",
+  "title": "Monitor Stand Lift",
+  "summary": "Raise your screen to eye level with a stable monitor riser kit.",
+  "room": "desk",
+  "tags": ["ergonomics", "desk", "productivity"],
+  "renterSafe": true,
+  "noDrill": true,
+  "timeMinutes": 15,
+  "difficulty": "easy",
+  "heroVideo": {
+    "src": "/videos/monitor-stand-lift.mp4",
+    "poster": "/images/monitor-stand-lift.jpg",
+    "durationSeconds": 15
+  },
+  "fitCheck": [
+    {"question": "Is your screen below eye level?", "recommendedIfYes": true},
+    {"question": "Do you use a single monitor or laptop?", "recommendedIfYes": true},
+    {"question": "Is your desk surface stable?", "recommendedIfYes": true}
+  ],
+  "kitOptions": [
+    {
+      "tier": "budget",
+      "label": "Compact riser",
+      "items": [
+        {"asin": "B000000084", "name": "Monitor riser shelf", "why": "Lifts the screen to eye level.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000085", "name": "Non-slip pads", "why": "Keeps the riser steady.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000086", "name": "Cable clips", "why": "Tames cords behind the riser.", "quantity": 1, "isPlaceholder": true}
+      ]
+    },
+    {
+      "tier": "best",
+      "label": "Riser + desk shelf",
+      "items": [
+        {"asin": "B000000087", "name": "Wide monitor riser", "why": "Fits keyboard storage underneath.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000088", "name": "Desk shelf organizer", "why": "Creates extra storage.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000089", "name": "Non-slip pads", "why": "Keeps the riser steady.", "quantity": 1, "isPlaceholder": true}
+      ]
+    }
+  ],
+  "toolsNeeded": ["Measuring tape"],
+  "measurements": ["Measure eye-level height", "Check monitor width"],
+  "removalNotes": ["Lift riser off and wipe desk", "Store pads flat to reuse"],
+  "steps": [
+    "Measure eye level while seated.",
+    "Place the riser and center the monitor.",
+    "Add non-slip pads if the surface is slick.",
+    "Route cables neatly behind the riser."
+  ],
+  "mistakes": [
+    "Riser too high causes neck strain.",
+    "Skipping pads can make the riser shift." 
+  ],
+  "faqs": [
+    {"q": "Can I use this for a laptop?", "a": "Yes—pair it with an external keyboard for comfort."}
+  ],
+  "updatedAt": "2025-02-06T14:30:00.000Z",
+  "seo": {
+    "title": "Monitor Stand Lift | FixFlicks",
+    "description": "Lift your monitor to eye level with a quick, renter-safe riser kit.",
+    "ogImage": "/images/og/monitor-stand-lift.jpg"
+  }
+}

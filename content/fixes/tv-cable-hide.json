@@ -1,0 +1,63 @@
+{
+  "slug": "tv-cable-hide",
+  "title": "TV Cable Hide",
+  "summary": "Tuck TV cords with surface raceways for a cleaner living room.",
+  "room": "living",
+  "tags": ["living", "cables", "organization"],
+  "renterSafe": true,
+  "noDrill": true,
+  "timeMinutes": 30,
+  "difficulty": "easy",
+  "heroVideo": {
+    "src": "/videos/tv-cable-hide.mp4",
+    "poster": "/images/tv-cable-hide.jpg",
+    "durationSeconds": 22
+  },
+  "fitCheck": [
+    {"question": "Are cords visible below the TV?", "recommendedIfYes": true},
+    {"question": "Do you want a no-drill cable cover?", "recommendedIfYes": true},
+    {"question": "Is the wall smooth enough for adhesive?", "recommendedIfYes": true}
+  ],
+  "kitOptions": [
+    {
+      "tier": "budget",
+      "label": "Surface raceway set",
+      "items": [
+        {"asin": "B000000120", "name": "Adhesive cable raceway", "why": "Hides cables in a clean channel.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000121", "name": "Cable ties", "why": "Keeps cords bundled.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000122", "name": "Adhesive cord clips", "why": "Tames loose cords.", "quantity": 1, "isPlaceholder": true}
+      ]
+    },
+    {
+      "tier": "best",
+      "label": "Raceway + power strip mount",
+      "items": [
+        {"asin": "B000000123", "name": "Paintable cable raceway kit", "why": "Matches wall color.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000124", "name": "Power strip mount", "why": "Lifts cords off the floor.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000125", "name": "Velcro cable ties", "why": "Reposition cords easily.", "quantity": 1, "isPlaceholder": true}
+      ]
+    }
+  ],
+  "toolsNeeded": ["Measuring tape", "Microfiber cloth"],
+  "measurements": ["Measure cable run length", "Check outlet height"],
+  "removalNotes": ["Warm adhesive before peeling", "Touch up wall with mild cleaner"],
+  "steps": [
+    "Unplug devices and plan the cable path.",
+    "Clean the wall where the raceway will attach.",
+    "Mount the raceway and bundle cords inside.",
+    "Mount the power strip and plug devices back in."
+  ],
+  "mistakes": [
+    "Mounting the raceway over textured walls.",
+    "Leaving slack that hangs outside the channel." 
+  ],
+  "faqs": [
+    {"q": "Can I paint the raceway?", "a": "Choose a paintable kit and follow the instructions."}
+  ],
+  "updatedAt": "2025-02-06T20:30:00.000Z",
+  "seo": {
+    "title": "TV Cable Hide | FixFlicks",
+    "description": "Hide TV cords with a renter-safe raceway kit.",
+    "ogImage": "/images/og/tv-cable-hide.jpg"
+  }
+}

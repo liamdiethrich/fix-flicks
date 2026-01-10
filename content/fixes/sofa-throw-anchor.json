@@ -1,0 +1,63 @@
+{
+  "slug": "sofa-throw-anchor",
+  "title": "Sofa Throw Anchor",
+  "summary": "Keep blankets in place with couch anchors and tidy bins.",
+  "room": "living",
+  "tags": ["living", "organization", "comfort"],
+  "renterSafe": true,
+  "noDrill": true,
+  "timeMinutes": 15,
+  "difficulty": "easy",
+  "heroVideo": {
+    "src": "/videos/sofa-throw-anchor.mp4",
+    "poster": "/images/sofa-throw-anchor.jpg",
+    "durationSeconds": 16
+  },
+  "fitCheck": [
+    {"question": "Do throws slide off the couch daily?", "recommendedIfYes": true},
+    {"question": "Is your sofa upholstered (not leather)?", "recommendedIfYes": true},
+    {"question": "Do you want a tidy living room reset?", "recommendedIfYes": true}
+  ],
+  "kitOptions": [
+    {
+      "tier": "budget",
+      "label": "Slip-proof basics",
+      "items": [
+        {"asin": "B000000108", "name": "Sofa throw anchors", "why": "Holds blankets in place.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000109", "name": "Non-slip sofa pad", "why": "Adds grip under throws.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000110", "name": "Small storage bin", "why": "Stores extra throws.", "quantity": 1, "isPlaceholder": true}
+      ]
+    },
+    {
+      "tier": "best",
+      "label": "Anchor + storage upgrade",
+      "items": [
+        {"asin": "B000000111", "name": "Heavy-duty throw anchors", "why": "Keeps thick blankets secure.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000112", "name": "Sofa arm organizer", "why": "Adds pockets for remotes.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000113", "name": "Woven storage basket", "why": "Holds extra throws.", "quantity": 1, "isPlaceholder": true}
+      ]
+    }
+  ],
+  "toolsNeeded": ["Lint roller"],
+  "measurements": ["Measure throw width", "Check sofa arm depth"],
+  "removalNotes": ["Lift anchors gently from seams", "Vacuum sofa afterward"],
+  "steps": [
+    "Smooth the throw over the sofa back.",
+    "Insert anchors along the seam to hold it.",
+    "Add non-slip padding if the throw shifts.",
+    "Store extra throws in a basket nearby."
+  ],
+  "mistakes": [
+    "Placing anchors too close to cushion seams.",
+    "Skipping storage leads to floor piles." 
+  ],
+  "faqs": [
+    {"q": "Will anchors damage fabric?", "a": "Use anchors designed for upholstery and avoid force."}
+  ],
+  "updatedAt": "2025-02-06T18:30:00.000Z",
+  "seo": {
+    "title": "Sofa Throw Anchor | FixFlicks",
+    "description": "Keep blankets in place with a simple throw anchor kit.",
+    "ogImage": "/images/og/sofa-throw-anchor.jpg"
+  }
+}

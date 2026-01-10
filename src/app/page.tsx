@@ -1,22 +1,10 @@
 import Link from "next/link";
 import SearchBar from "@/components/SearchBar";
 import FixCard from "@/components/FixCard";
+import DbInitBanner from "@/components/DbInitBanner";
 import { getAllFixes } from "@/lib/content";
 import { prisma } from "@/lib/prisma";
-import { Prisma } from "@prisma/client";
-
-const isMissingTableError = (error: unknown) => {
-  if (error instanceof Prisma.PrismaClientKnownRequestError && error.code === "P2021") {
-    return true;
-  }
-
-  if (error instanceof Error) {
-    const message = error.message.toLowerCase();
-    return message.includes("no such table") || message.includes("does not exist") || message.includes("missing table");
-  }
-
-  return false;
-};
+import { shouldShowDbInitBanner } from "@/lib/db";
 
 export default async function Home() {
   const fixes = getAllFixes();
@@ -42,12 +30,8 @@ export default async function Home() {
       take: 3,
     });
   } catch (error) {
-    if (isMissingTableError(error)) {
-      if (process.env.NODE_ENV === "development") {
-        dbNotInitialized = true;
-      } else {
-        throw error;
-      }
+    if (shouldShowDbInitBanner(error)) {
+      dbNotInitialized = true;
     } else {
       throw error;
     }
@@ -59,11 +43,7 @@ export default async function Home() {
 
   return (
     <div className="bg-slate-50">
-      {dbNotInitialized ? (
-        <div className="border-b border-amber-200 bg-amber-50 px-4 py-2 text-xs text-amber-900">
-          Database not initialized. Run: npm run setup or npx prisma migrate dev
-        </div>
-      ) : null}
+      <DbInitBanner show={dbNotInitialized} />
       <section className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-4 py-16 md:flex-row md:items-center md:gap-16 md:px-6">
         <div className="flex-1 space-y-6">
           <p className="text-sm font-semibold uppercase tracking-wide text-emerald-600">FixFlicks</p>

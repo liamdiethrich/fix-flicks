@@ -1,0 +1,63 @@
+{
+  "slug": "entryway-key-hook",
+  "title": "Entryway Key Hook",
+  "summary": "Add an adhesive key hook so keys never vanish.",
+  "room": "entryway",
+  "tags": ["entryway", "organization", "renterSafe"],
+  "renterSafe": true,
+  "noDrill": true,
+  "timeMinutes": 15,
+  "difficulty": "easy",
+  "heroVideo": {
+    "src": "/videos/entryway-key-hook.mp4",
+    "poster": "/images/entryway-key-hook.jpg",
+    "durationSeconds": 12
+  },
+  "fitCheck": [
+    {"question": "Do keys land on random surfaces?", "recommendedIfYes": true},
+    {"question": "Is there a smooth wall near the door?", "recommendedIfYes": true},
+    {"question": "Do you want a renter-safe hook?", "recommendedIfYes": true}
+  ],
+  "kitOptions": [
+    {
+      "tier": "budget",
+      "label": "Simple key drop",
+      "items": [
+        {"asin": "B000000114", "name": "Adhesive key hook strip", "why": "Creates a dedicated key spot.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000115", "name": "Mini entry tray", "why": "Holds mail and sunglasses.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000116", "name": "Label tags", "why": "Assigns a hook per person.", "quantity": 1, "isPlaceholder": true}
+      ]
+    },
+    {
+      "tier": "best",
+      "label": "Hook + drop zone",
+      "items": [
+        {"asin": "B000000117", "name": "Adhesive key rail", "why": "Holds multiple key sets.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000118", "name": "Wall-mounted mail pocket", "why": "Keeps mail off counters.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000119", "name": "Small entry tray", "why": "Catches daily items.", "quantity": 1, "isPlaceholder": true}
+      ]
+    }
+  ],
+  "toolsNeeded": ["Cleaning cloth"],
+  "measurements": ["Measure reach height", "Check wall clearance near door"],
+  "removalNotes": ["Pull adhesive tabs down slowly", "Wipe wall with warm water"],
+  "steps": [
+    "Clean the wall and let it dry.",
+    "Mark the height for each hook.",
+    "Press the adhesive strip firmly for 30 seconds.",
+    "Wait before hanging keys to let adhesive set."
+  ],
+  "mistakes": [
+    "Mounting too close to the door swing.",
+    "Skipping cure time causes hooks to fall." 
+  ],
+  "faqs": [
+    {"q": "Will this work on textured walls?", "a": "Adhesive holds best on smooth paint or tile."}
+  ],
+  "updatedAt": "2025-02-06T19:30:00.000Z",
+  "seo": {
+    "title": "Entryway Key Hook | FixFlicks",
+    "description": "A renter-safe key hook kit that keeps keys in one place.",
+    "ogImage": "/images/og/entryway-key-hook.jpg"
+  }
+}

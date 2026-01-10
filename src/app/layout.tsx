@@ -5,7 +5,7 @@ import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import DevAmazonWarning from "@/components/DevAmazonWarning";
 import PageViewTracker from "@/components/PageViewTracker";
-import { getSiteUrl } from "@/lib/env";
+import { getAmazonOnelinkScriptSrc, getSiteUrl } from "@/lib/env";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,6 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 const siteUrl = getSiteUrl();
+const onelinkScriptSrc = getAmazonOnelinkScriptSrc();
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -49,10 +50,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {onelinkScriptSrc ? <script async src={onelinkScriptSrc}></script> : null}
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} min-h-screen bg-white text-slate-900 antialiased`}
       >
-        <DevAmazonWarning show={process.env.NODE_ENV === "development" && !process.env.AMAZON_ASSOCIATE_TAG} />
+        <DevAmazonWarning
+          show={process.env.NODE_ENV === "development" && !process.env.AMAZON_ASSOCIATE_TAG_DEFAULT}
+        />
         <PageViewTracker />
         <SiteHeader />
         <main className="min-h-[70vh]">{children}</main>

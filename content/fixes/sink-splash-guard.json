@@ -1,0 +1,63 @@
+{
+  "slug": "sink-splash-guard",
+  "title": "Kitchen Sink Splash Guard",
+  "summary": "Block backsplash splatter with a clear guard and quick-dry routine.",
+  "room": "kitchen",
+  "tags": ["sink", "cleanup", "renterSafe"],
+  "renterSafe": true,
+  "noDrill": true,
+  "timeMinutes": 20,
+  "difficulty": "easy",
+  "heroVideo": {
+    "src": "/videos/sink-splash-guard.mp4",
+    "poster": "/images/sink-splash-guard.jpg",
+    "durationSeconds": 18
+  },
+  "fitCheck": [
+    {"question": "Does water splash onto the counter or backsplash?", "recommendedIfYes": true},
+    {"question": "Is your sink against a wall?", "recommendedIfYes": true},
+    {"question": "Do you want a removable guard?", "recommendedIfYes": true}
+  ],
+  "kitOptions": [
+    {
+      "tier": "budget",
+      "label": "Splash control essentials",
+      "items": [
+        {"asin": "B000000060", "name": "Clear silicone sink splash guard", "why": "Blocks splashes without drilling.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000061", "name": "Quick-dry microfiber towels", "why": "Wipe down after washing.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000062", "name": "Countertop drying mat", "why": "Catches drips near the sink.", "quantity": 1, "isPlaceholder": true}
+      ]
+    },
+    {
+      "tier": "best",
+      "label": "Guard + barrier mat",
+      "items": [
+        {"asin": "B000000063", "name": "Full-length silicone splash guard", "why": "Covers the entire sink edge.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000064", "name": "Absorbent sink mat", "why": "Dries dishes without puddles.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000065", "name": "Water-repellent counter spray", "why": "Reduces water spots.", "quantity": 1, "isPlaceholder": true}
+      ]
+    }
+  ],
+  "toolsNeeded": ["Cleaning cloth"],
+  "measurements": ["Measure sink length", "Check counter depth"],
+  "removalNotes": ["Lift guard slowly to avoid residue", "Wipe surface with warm soapy water"],
+  "steps": [
+    "Clean the sink edge and backsplash thoroughly.",
+    "Set the splash guard along the sink rim.",
+    "Add the drying mat near the faucet zone.",
+    "Wipe the guard daily to prevent buildup."
+  ],
+  "mistakes": [
+    "Skipping cleaning makes the guard slide.",
+    "Letting water pool behind the guard." 
+  ],
+  "faqs": [
+    {"q": "Will the guard trap moisture?", "a": "Wipe it down after use and lift it to dry weekly."}
+  ],
+  "updatedAt": "2025-02-06T09:00:00.000Z",
+  "seo": {
+    "title": "Kitchen Sink Splash Guard | FixFlicks",
+    "description": "A renter-safe kit to reduce sink splashes and keep counters dry.",
+    "ogImage": "/images/og/sink-splash-guard.jpg"
+  }
+}
