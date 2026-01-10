@@ -1,0 +1,63 @@
+{
+  "slug": "pantry-shelf-labels",
+  "title": "Pantry Shelf Labels",
+  "summary": "Label pantry zones with bins and tags so restocks stay organized.",
+  "room": "kitchen",
+  "tags": ["pantry", "organization", "storage"],
+  "renterSafe": true,
+  "noDrill": true,
+  "timeMinutes": 25,
+  "difficulty": "easy",
+  "heroVideo": {
+    "src": "/videos/pantry-shelf-labels.mp4",
+    "poster": "/images/pantry-shelf-labels.jpg",
+    "durationSeconds": 20
+  },
+  "fitCheck": [
+    {"question": "Do pantry items end up scattered?", "recommendedIfYes": true},
+    {"question": "Do you want clear zones for snacks?", "recommendedIfYes": true},
+    {"question": "Is there room for bins on shelves?", "recommendedIfYes": true}
+  ],
+  "kitOptions": [
+    {
+      "tier": "budget",
+      "label": "Label + bin starter",
+      "items": [
+        {"asin": "B000000126", "name": "Clear pantry bins", "why": "Groups similar items.", "quantity": 2, "isPlaceholder": true},
+        {"asin": "B000000127", "name": "Label tape", "why": "Keeps zones clear.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000128", "name": "Shelf liner", "why": "Adds grip to bins.", "quantity": 1, "isPlaceholder": true}
+      ]
+    },
+    {
+      "tier": "best",
+      "label": "Full pantry reset",
+      "items": [
+        {"asin": "B000000129", "name": "Deep pantry bins", "why": "Holds bulk items.", "quantity": 3, "isPlaceholder": true},
+        {"asin": "B000000130", "name": "Chalk label kit", "why": "Reusable labels for zones.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000131", "name": "Shelf liner roll", "why": "Prevents sliding.", "quantity": 1, "isPlaceholder": true}
+      ]
+    }
+  ],
+  "toolsNeeded": ["Measuring tape"],
+  "measurements": ["Measure shelf depth", "Count shelf zones"],
+  "removalNotes": ["Peel labels slowly", "Wipe shelves with warm water"],
+  "steps": [
+    "Empty one shelf and wipe it clean.",
+    "Add shelf liner and place bins.",
+    "Group items by category.",
+    "Label each bin to keep the system consistent."
+  ],
+  "mistakes": [
+    "Using bins that are too deep for the shelf.",
+    "Skipping labels leads to mixing categories." 
+  ],
+  "faqs": [
+    {"q": "Can I label with painter's tape?", "a": "Yes—swap to reusable labels when ready."}
+  ],
+  "updatedAt": "2025-02-06T21:30:00.000Z",
+  "seo": {
+    "title": "Pantry Shelf Labels | FixFlicks",
+    "description": "A pantry labeling kit that keeps snacks and staples organized.",
+    "ogImage": "/images/og/pantry-shelf-labels.jpg"
+  }
+}

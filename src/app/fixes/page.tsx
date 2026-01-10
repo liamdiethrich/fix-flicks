@@ -1,9 +1,11 @@
 import FixCard from "@/components/FixCard";
 import FixFilters from "@/components/FixFilters";
 import SearchBar from "@/components/SearchBar";
+import DbInitBanner from "@/components/DbInitBanner";
 import { filterFixes, getAllFixes, searchFixes } from "@/lib/content";
 import { prisma } from "@/lib/prisma";
 import type { Fix } from "@/lib/schemas";
+import { shouldShowDbInitBanner } from "@/lib/db";
 
 export default async function FixesPage({
   searchParams,
@@ -18,25 +20,35 @@ export default async function FixesPage({
   const sort = typeof searchParams.sort === "string" ? searchParams.sort : "trending";
 
   let fixes: Fix[] = query ? searchFixes(query) : filterFixes({ room, renterSafe, noDrill, difficulty });
+  let dbNotInitialized = false;
 
   if (sort === "newest") {
     fixes = fixes.sort((a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime());
   } else {
     const since = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
-    const events = await prisma.event.groupBy({
-      by: ["fixSlug"],
-      where: { fixSlug: { not: null }, createdAt: { gte: since } },
-      _count: { fixSlug: true },
-      orderBy: { _count: { fixSlug: "desc" } },
-    });
-    const scores = new Map(events.map((event) => [event.fixSlug, event._count.fixSlug]));
-    fixes = fixes.sort((a, b) => (scores.get(b.slug) || 0) - (scores.get(a.slug) || 0));
+    try {
+      const events = await prisma.event.groupBy({
+        by: ["fixSlug"],
+        where: { fixSlug: { not: null }, createdAt: { gte: since } },
+        _count: { fixSlug: true },
+        orderBy: { _count: { fixSlug: "desc" } },
+      });
+      const scores = new Map(events.map((event) => [event.fixSlug, event._count.fixSlug]));
+      fixes = fixes.sort((a, b) => (scores.get(b.slug) || 0) - (scores.get(a.slug) || 0));
+    } catch (error) {
+      if (shouldShowDbInitBanner(error)) {
+        dbNotInitialized = true;
+      } else {
+        throw error;
+      }
+    }
   }
 
   const allFixes = getAllFixes();
 
   return (
     <div className="bg-slate-50">
+      <DbInitBanner show={dbNotInitialized} />
       <div className="mx-auto w-full max-w-6xl space-y-6 px-4 py-12 md:px-6">
         <div className="space-y-2">
           <h1 className="text-3xl font-semibold text-slate-900">Fix library</h1>

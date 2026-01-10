@@ -1,0 +1,63 @@
+{
+  "slug": "toilet-paper-holder-no-drill",
+  "title": "No-Drill Toilet Paper Holder",
+  "summary": "Add a stable toilet paper holder with strong adhesive mounts.",
+  "room": "bathroom",
+  "tags": ["bathroom", "noDrill", "storage"],
+  "renterSafe": true,
+  "noDrill": true,
+  "timeMinutes": 20,
+  "difficulty": "easy",
+  "heroVideo": {
+    "src": "/videos/toilet-paper-holder-no-drill.mp4",
+    "poster": "/images/toilet-paper-holder-no-drill.jpg",
+    "durationSeconds": 18
+  },
+  "fitCheck": [
+    {"question": "Do you lack a toilet paper holder?", "recommendedIfYes": true},
+    {"question": "Is the wall tile or smooth paint?", "recommendedIfYes": true},
+    {"question": "Do you need a renter-safe install?", "recommendedIfYes": true}
+  ],
+  "kitOptions": [
+    {
+      "tier": "budget",
+      "label": "Adhesive holder basics",
+      "items": [
+        {"asin": "B000000072", "name": "Adhesive toilet paper holder", "why": "Adds a holder without drilling.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000073", "name": "Isopropyl prep wipes", "why": "Ensures adhesive sticks.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000074", "name": "Extra adhesive strips", "why": "Backup strips for re-mounting.", "quantity": 1, "isPlaceholder": true}
+      ]
+    },
+    {
+      "tier": "best",
+      "label": "Holder + spare roll shelf",
+      "items": [
+        {"asin": "B000000075", "name": "Adhesive toilet paper holder", "why": "Keeps rolls within reach.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000076", "name": "Adhesive spare roll shelf", "why": "Stores backup rolls.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000077", "name": "Surface prep kit", "why": "Maximizes adhesive bond.", "quantity": 1, "isPlaceholder": true}
+      ]
+    }
+  ],
+  "toolsNeeded": ["Cleaning cloth", "Measuring tape"],
+  "measurements": ["Measure reach from toilet", "Check wall flatness"],
+  "removalNotes": ["Pull adhesive tabs slowly downward", "Clean residue with warm water"],
+  "steps": [
+    "Clean and dry the mounting surface.",
+    "Mark the height and align the holder.",
+    "Press adhesive firmly for 30 seconds.",
+    "Wait the recommended cure time before loading rolls."
+  ],
+  "mistakes": [
+    "Skipping the cure time causes slipping.",
+    "Mounting too close to the toilet makes it awkward." 
+  ],
+  "faqs": [
+    {"q": "Will it hold mega rolls?", "a": "Check the holder width and choose a compatible roll size."}
+  ],
+  "updatedAt": "2025-02-06T12:00:00.000Z",
+  "seo": {
+    "title": "No-Drill Toilet Paper Holder | FixFlicks",
+    "description": "A renter-safe kit to add a toilet paper holder without drilling.",
+    "ogImage": "/images/og/toilet-paper-holder-no-drill.jpg"
+  }
+}

@@ -1,9 +1,9 @@
 {
   "slug": "cabinet-drawer-stops",
   "title": "Quiet Cabinet Drawer Stops",
-  "summary": "Stop drawers from slamming and protect cabinet frames with simple adhesive bumpers and felt pads.",
+  "summary": "Stop cabinet slams with soft-close bumpers and felt pads.",
   "room": "kitchen",
-  "tags": ["noise", "cabinet", "soft-close"],
+  "tags": ["cabinets", "noise", "renterSafe"],
   "renterSafe": true,
   "noDrill": true,
   "timeMinutes": 20,
@@ -14,32 +14,50 @@
     "durationSeconds": 18
   },
   "fitCheck": [
-    {"question": "Do your drawers hit the cabinet frame when closing?", "recommendedIfYes": true},
-    {"question": "Is there a flat surface inside the drawer front?", "recommendedIfYes": true},
-    {"question": "Are you avoiding drilling hardware?", "recommendedIfYes": true}
+    {"question": "Do your drawers slam shut?", "recommendedIfYes": true},
+    {"question": "Are you allowed to add adhesive bumpers?", "recommendedIfYes": true},
+    {"question": "Do you want a quick, renter-safe fix?", "recommendedIfYes": true}
   ],
-  "kit": [
-    {"asin": "B000000000", "name": "Clear cabinet bumper pads", "why": "Soft landing to reduce impact noise.", "quantity": 1, "isPlaceholder": true},
-    {"asin": "B000000001", "name": "Felt circle pads", "why": "Extra cushioning for heavier drawers.", "quantity": 1, "isPlaceholder": true},
-    {"asin": "B000000002", "name": "Surface prep wipes", "why": "Improve adhesive grip on wood finishes.", "quantity": 1, "isPlaceholder": true}
+  "kitOptions": [
+    {
+      "tier": "budget",
+      "label": "Basic quieting kit",
+      "items": [
+        {"asin": "B000000020", "name": "Clear bumper dots", "why": "Softens drawer close without drilling.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000021", "name": "Felt pad sheets", "why": "Stops drawer fronts from rattling.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000022", "name": "Surface cleaner wipes", "why": "Preps surfaces so bumpers stick.", "quantity": 1, "isPlaceholder": true}
+      ]
+    },
+    {
+      "tier": "best",
+      "label": "Extra coverage for full kitchens",
+      "items": [
+        {"asin": "B000000023", "name": "Soft-close bumper pack", "why": "Thicker bumpers for heavy drawers.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000024", "name": "Felt pad roll", "why": "Trim to fit drawer fronts and rails.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000025", "name": "Cabinet door dampers", "why": "Adds extra hush to door swings.", "quantity": 1, "isPlaceholder": true}
+      ]
+    }
   ],
+  "toolsNeeded": ["Cleaning cloth", "Scissors"],
+  "measurements": ["Count drawers and doors", "Measure bumper placement points"],
+  "removalNotes": ["Twist bumpers off slowly", "Use mild cleaner to remove residue"],
   "steps": [
-    "Clean the inside corners of the drawer frame with prep wipes.",
-    "Place bumper pads on the inside frame where the drawer front meets.",
-    "Add felt pads to the drawer front if you need more cushioning.",
-    "Close the drawer slowly and adjust pad placement for an even stop."
+    "Clean the drawer front and cabinet frame.",
+    "Apply bumpers near the top corners of the frame.",
+    "Add felt pads where wood meets wood.",
+    "Test close and adjust bumper placement if needed."
   ],
   "mistakes": [
-    "Skipping surface cleaning can cause pads to fall off.",
-    "Over-stacking pads can prevent drawers from closing fully."
+    "Placing bumpers too close to hinges can prevent full closure.",
+    "Skipping cleaning causes bumpers to peel." 
   ],
   "faqs": [
-    {"q": "Will the pads damage the finish?", "a": "Most adhesive pads remove cleanly when pulled slowly at a low angle."}
+    {"q": "Will this leave marks?", "a": "Most bumpers remove cleanly with gentle twisting and warm water."}
   ],
-  "updatedAt": "2025-01-10T10:00:00.000Z",
+  "updatedAt": "2025-02-02T12:00:00.000Z",
   "seo": {
     "title": "Quiet Cabinet Drawer Stops | FixFlicks",
-    "description": "A renter-safe kit to stop drawer slams with clear bumpers and felt pads.",
+    "description": "A renter-safe kit for softening drawer closes and reducing cabinet noise.",
     "ogImage": "/images/og/cabinet-drawer-stops.jpg"
   }
 }

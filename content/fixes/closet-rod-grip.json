@@ -1,0 +1,63 @@
+{
+  "slug": "closet-rod-grip",
+  "title": "Closet Rod Grip Upgrade",
+  "summary": "Stop hangers from sliding with grippy sleeves and hooks.",
+  "room": "closet",
+  "tags": ["closet", "organization", "renterSafe"],
+  "renterSafe": true,
+  "noDrill": true,
+  "timeMinutes": 20,
+  "difficulty": "easy",
+  "heroVideo": {
+    "src": "/videos/closet-rod-grip.mp4",
+    "poster": "/images/closet-rod-grip.jpg",
+    "durationSeconds": 18
+  },
+  "fitCheck": [
+    {"question": "Do hangers slide to the center?", "recommendedIfYes": true},
+    {"question": "Is your rod round and smooth?", "recommendedIfYes": true},
+    {"question": "Do you want a quick, removable fix?", "recommendedIfYes": true}
+  ],
+  "kitOptions": [
+    {
+      "tier": "budget",
+      "label": "Grip sleeves",
+      "items": [
+        {"asin": "B000000090", "name": "Closet rod grip sleeves", "why": "Adds friction to the rod.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000091", "name": "Velvet hanger pack", "why": "Prevents slipping and saves space.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000092", "name": "Divider tabs", "why": "Keeps sections organized.", "quantity": 1, "isPlaceholder": true}
+      ]
+    },
+    {
+      "tier": "best",
+      "label": "Grip + organizer set",
+      "items": [
+        {"asin": "B000000093", "name": "Rod grip sleeves", "why": "Keeps hangers in place.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000094", "name": "Velvet hanger set", "why": "Prevents slipping and adds capacity.", "quantity": 2, "isPlaceholder": true},
+        {"asin": "B000000095", "name": "Closet section dividers", "why": "Keeps zones separated.", "quantity": 1, "isPlaceholder": true}
+      ]
+    }
+  ],
+  "toolsNeeded": ["Step stool"],
+  "measurements": ["Measure rod diameter", "Count hanger sections"],
+  "removalNotes": ["Slide sleeves off gently", "Store sleeves flat to reuse"],
+  "steps": [
+    "Remove hangers and wipe the rod.",
+    "Slide grip sleeves onto the rod.",
+    "Rehang clothes by category.",
+    "Add dividers to keep spacing consistent."
+  ],
+  "mistakes": [
+    "Overloading one section makes sleeves slip.",
+    "Skipping cleaning causes sleeves to slide." 
+  ],
+  "faqs": [
+    {"q": "Will this fit a square rod?", "a": "Use a sleeve made for flat or square rods."}
+  ],
+  "updatedAt": "2025-02-06T15:30:00.000Z",
+  "seo": {
+    "title": "Closet Rod Grip Upgrade | FixFlicks",
+    "description": "Stop hangers from sliding with a renter-safe grip kit.",
+    "ogImage": "/images/og/closet-rod-grip.jpg"
+  }
+}

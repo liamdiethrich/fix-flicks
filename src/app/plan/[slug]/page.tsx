@@ -5,7 +5,10 @@ import AmazonButton from "@/components/AmazonButton";
 import FixCard from "@/components/FixCard";
 import { buildAddToCartUrl } from "@/lib/amazon";
 import { getAllFixes, getPlanBySlug } from "@/lib/content";
-import { getAmazonTag, getSiteUrl } from "@/lib/env";
+import { getAssociateTagFromSearchParams } from "@/lib/associateTag";
+import { getAvailableTiers, getTierLabel, parseTier, resolveKitOption } from "@/lib/fixKits";
+import { getSiteUrl } from "@/lib/env";
+import { buildQueryString } from "@/lib/url";
 
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const plan = getPlanBySlug(params.slug);
@@ -24,14 +27,29 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   };
 }
 
-export default function PlanDetailPage({ params }: { params: { slug: string } }) {
+export default function PlanDetailPage({
+  params,
+  searchParams,
+}: {
+  params: { slug: string };
+  searchParams: Record<string, string | string[] | undefined>;
+}) {
   const plan = getPlanBySlug(params.slug);
   if (!plan) notFound();
   const fixes = getAllFixes().filter((fix) => plan.fixSlugs.includes(fix.slug));
-  const tag = getAmazonTag();
+  const tag = getAssociateTagFromSearchParams(searchParams);
+  const requestedTier = parseTier(typeof searchParams.tier === "string" ? searchParams.tier : undefined);
+  const availableTiers = getAvailableTiers(fixes.flatMap((fix) => fix.kitOptions));
+  const selectedTier =
+    requestedTier && availableTiers.includes(requestedTier)
+      ? requestedTier
+      : availableTiers.includes("best")
+        ? "best"
+        : availableTiers[0] ?? "best";
   const combined = new Map<string, { asin: string; quantity: number }>();
   fixes.forEach((fix) => {
-    fix.kit.forEach((item) => {
+    const option = resolveKitOption(fix.kitOptions, selectedTier);
+    option.items.forEach((item) => {
       const current = combined.get(item.asin) || { asin: item.asin, quantity: 0 };
       combined.set(item.asin, { asin: item.asin, quantity: current.quantity + item.quantity });
     });
@@ -47,15 +65,36 @@ export default function PlanDetailPage({ params }: { params: { slug: string } })
         <div className="space-y-4 rounded-2xl border border-slate-200 bg-white p-6">
           <h1 className="text-3xl font-semibold text-slate-900">{plan.title}</h1>
           <p className="text-sm text-slate-600">{plan.summary}</p>
+          <div className="flex flex-wrap gap-2">
+            {availableTiers.map((tier) => {
+              const isSelected = tier === selectedTier;
+              return (
+                <a
+                  key={tier}
+                  href={`/plan/${plan.slug}${buildQueryString(searchParams, { tier })}`}
+                  className={`rounded-full px-4 py-2 text-xs font-semibold ${
+                    isSelected
+                      ? "bg-emerald-600 text-white"
+                      : "border border-slate-200 bg-white text-slate-700 hover:border-slate-300"
+                  }`}
+                >
+                  {getTierLabel(tier)}
+                </a>
+              );
+            })}
+          </div>
           <div className="flex flex-wrap items-center gap-3">
             <AmazonButton
               href={cartUrl}
-              label="Add plan essentials to Amazon cart"
+              label={`Add ${getTierLabel(selectedTier)} plan kit to Amazon cart`}
               event="plan_add_to_cart"
               planSlug={plan.slug}
             />
             <span className="text-xs text-slate-500">(affiliate link)</span>
           </div>
+          <p className="text-xs text-slate-500">
+            Tier preference applies across fixes; we fall back to the closest available kit when a tier is missing.
+          </p>
           {wasTruncated && (
             <p className="text-xs text-amber-600">
               Plan includes more than 20 items; cart link is capped to the top 20.

@@ -7,7 +7,10 @@ import HelpfulWidget from "@/components/HelpfulWidget";
 import FixCard from "@/components/FixCard";
 import { buildAddToCartUrl, buildAmazonProductUrl } from "@/lib/amazon";
 import { getAllFixes, getFixBySlug } from "@/lib/content";
-import { getAmazonTag, getSiteUrl } from "@/lib/env";
+import { getAssociateTagFromSearchParams } from "@/lib/associateTag";
+import { getAvailableTiers, getTierLabel, parseTier, resolveKitOption } from "@/lib/fixKits";
+import { getSiteUrl } from "@/lib/env";
+import { buildQueryString } from "@/lib/url";
 
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const fix = getFixBySlug(params.slug);
@@ -26,12 +29,22 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   };
 }
 
-export default function FixDetailPage({ params }: { params: { slug: string } }) {
+export default function FixDetailPage({
+  params,
+  searchParams,
+}: {
+  params: { slug: string };
+  searchParams: Record<string, string | string[] | undefined>;
+}) {
   const fix = getFixBySlug(params.slug);
   if (!fix) notFound();
-  const tag = getAmazonTag();
+  const tag = getAssociateTagFromSearchParams(searchParams);
+  const kitOptions = fix.kitOptions;
+  const availableTiers = getAvailableTiers(kitOptions);
+  const requestedTier = parseTier(typeof searchParams.tier === "string" ? searchParams.tier : undefined);
+  const selectedOption = resolveKitOption(kitOptions, requestedTier);
   const cartUrl = buildAddToCartUrl(
-    fix.kit.map((item) => ({ asin: item.asin, quantity: item.quantity })),
+    selectedOption.items.map((item) => ({ asin: item.asin, quantity: item.quantity })),
     tag
   );
   const related = getAllFixes()
@@ -78,10 +91,29 @@ export default function FixDetailPage({ params }: { params: { slug: string } }) 
                 {fix.renterSafe && <span className="rounded-full bg-emerald-50 px-2 py-1">Renter-safe</span>}
                 {fix.noDrill && <span className="rounded-full bg-sky-50 px-2 py-1">No-drill</span>}
               </div>
-              <div className="mt-6 flex flex-wrap items-center gap-3">
+              <div className="mt-6 space-y-4">
+                <div className="flex flex-wrap gap-2">
+                  {availableTiers.map((tier) => {
+                    const isSelected = tier === selectedOption.tier;
+                    return (
+                      <a
+                        key={tier}
+                        href={`/fix/${fix.slug}${buildQueryString(searchParams, { tier })}`}
+                        className={`rounded-full px-4 py-2 text-xs font-semibold ${
+                          isSelected
+                            ? "bg-emerald-600 text-white"
+                            : "border border-slate-200 bg-white text-slate-700 hover:border-slate-300"
+                        }`}
+                      >
+                        {getTierLabel(tier)}
+                      </a>
+                    );
+                  })}
+                </div>
+                <div className="flex flex-wrap items-center gap-3">
                 <AmazonButton
                   href={cartUrl}
-                  label="Add full kit to Amazon cart"
+                  label={`Add ${getTierLabel(selectedOption.tier)} kit to Amazon cart`}
                   event="add_to_cart"
                   fixSlug={fix.slug}
                 />
@@ -89,9 +121,39 @@ export default function FixDetailPage({ params }: { params: { slug: string } }) 
                 <a href="#kit" className="text-sm font-semibold text-slate-700">
                   Scroll to kit
                 </a>
+                </div>
               </div>
             </div>
             <FitCheckList items={fix.fitCheck} />
+            <div className="rounded-2xl border border-slate-200 bg-white p-4">
+              <h3 className="text-lg font-semibold text-slate-900">Zero-Regret Setup</h3>
+              <div className="mt-3 grid gap-3 text-sm text-slate-600 md:grid-cols-3">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Tools</p>
+                  <ul className="mt-2 list-disc space-y-1 pl-4">
+                    {fix.toolsNeeded.map((tool) => (
+                      <li key={tool}>{tool}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Measurements</p>
+                  <ul className="mt-2 list-disc space-y-1 pl-4">
+                    {fix.measurements.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Removal notes</p>
+                  <ul className="mt-2 list-disc space-y-1 pl-4">
+                    {fix.removalNotes.map((note) => (
+                      <li key={note}>{note}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -101,15 +163,21 @@ export default function FixDetailPage({ params }: { params: { slug: string } }) 
             <div className="flex items-center gap-2">
               <AmazonButton
                 href={cartUrl}
-                label="Add kit to Amazon cart"
+                label={`Add ${getTierLabel(selectedOption.tier)} kit to Amazon cart`}
                 event="add_to_cart"
                 fixSlug={fix.slug}
               />
               <span className="text-xs text-slate-500">(affiliate link)</span>
             </div>
           </div>
+          <div className="flex flex-wrap items-center gap-3 text-sm text-slate-600">
+            <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">
+              {getTierLabel(selectedOption.tier)} pick
+            </span>
+            <span>{selectedOption.label}</span>
+          </div>
           <div className="grid gap-4 md:grid-cols-2">
-            {fix.kit.map((item) => (
+            {selectedOption.items.map((item) => (
               <div key={item.asin} className="rounded-2xl border border-slate-200 bg-white p-4">
                 <div className="flex items-center justify-between">
                   <h3 className="text-base font-semibold text-slate-900">{item.name}</h3>
@@ -178,9 +246,14 @@ export default function FixDetailPage({ params }: { params: { slug: string } }) 
       </div>
       <div className="fixed bottom-0 left-0 right-0 border-t border-slate-200 bg-white px-4 py-3 shadow-lg md:hidden">
         <div className="flex items-center justify-between">
-          <span className="text-sm font-semibold">Add full kit</span>
+          <span className="text-sm font-semibold">Add {getTierLabel(selectedOption.tier)} kit</span>
           <div className="flex items-center gap-2">
-            <AmazonButton href={cartUrl} label="Amazon cart" event="add_to_cart" fixSlug={fix.slug} />
+            <AmazonButton
+              href={cartUrl}
+              label={`${getTierLabel(selectedOption.tier)} kit`}
+              event="add_to_cart"
+              fixSlug={fix.slug}
+            />
             <span className="text-[11px] text-slate-500">(affiliate link)</span>
           </div>
         </div>

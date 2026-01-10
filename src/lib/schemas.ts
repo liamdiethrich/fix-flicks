@@ -14,11 +14,28 @@ export const RoomEnum = z.enum([
 
 export const DifficultyEnum = z.enum(["easy", "medium", "hard"]);
 
-export const FixSchema = z.object({
-  slug: z.string().min(1),
-  title: z.string().min(1),
-  summary: z.string().min(1),
-  room: RoomEnum,
+export const KitTierEnum = z.enum(["budget", "best", "premium"]);
+
+export const KitItemSchema = z.object({
+  asin: z.string().length(10),
+  name: z.string().min(1),
+  why: z.string().min(1),
+  quantity: z.number().int().positive(),
+  isPlaceholder: z.boolean().optional(),
+});
+
+export const KitOptionSchema = z.object({
+  tier: KitTierEnum,
+  label: z.string().min(1),
+  items: z.array(KitItemSchema).min(1).max(8),
+});
+
+export const FixSchema = z
+  .object({
+    slug: z.string().min(1),
+    title: z.string().min(1),
+    summary: z.string().min(1),
+    room: RoomEnum,
   tags: z.array(z.string().min(1)),
   renterSafe: z.boolean(),
   noDrill: z.boolean(),
@@ -38,18 +55,11 @@ export const FixSchema = z.object({
     )
     .min(3)
     .max(6),
-  kit: z
-    .array(
-      z.object({
-        asin: z.string().length(10),
-        name: z.string().min(1),
-        why: z.string().min(1),
-        quantity: z.number().int().positive(),
-        isPlaceholder: z.boolean().optional(),
-      })
-    )
-    .min(3)
-    .max(8),
+  kit: z.array(KitItemSchema).min(3).max(8).optional(),
+  kitOptions: z.array(KitOptionSchema).min(1).max(3).optional(),
+  toolsNeeded: z.array(z.string().min(1)).max(6),
+  measurements: z.array(z.string().min(1)).max(6),
+  removalNotes: z.array(z.string().min(1)).max(6),
   steps: z.array(z.string().min(1)).min(3).max(7),
   mistakes: z.array(z.string().min(1)).max(5),
   faqs: z.array(z.object({ q: z.string().min(1), a: z.string().min(1) })).max(8),
@@ -59,9 +69,15 @@ export const FixSchema = z.object({
     description: z.string().optional(),
     ogImage: z.string().optional(),
   }),
-});
+})
+  .refine((data) => (data.kitOptions && data.kitOptions.length > 0) || (data.kit && data.kit.length > 0), {
+    message: "Fix must include kitOptions or kit.",
+  });
 
 export type Fix = z.infer<typeof FixSchema>;
+export type KitItem = z.infer<typeof KitItemSchema>;
+export type KitOption = z.infer<typeof KitOptionSchema>;
+export type KitTier = z.infer<typeof KitTierEnum>;
 
 export const PlanSchema = z.object({
   slug: z.string().min(1),

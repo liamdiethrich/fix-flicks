@@ -1,0 +1,63 @@
+{
+  "slug": "bathroom-counter-tray",
+  "title": "Bathroom Counter Tray Reset",
+  "summary": "Corral daily items into a tray system so counters stay clear.",
+  "room": "bathroom",
+  "tags": ["bathroom", "organization", "cleanup"],
+  "renterSafe": true,
+  "noDrill": true,
+  "timeMinutes": 15,
+  "difficulty": "easy",
+  "heroVideo": {
+    "src": "/videos/bathroom-counter-tray.mp4",
+    "poster": "/images/bathroom-counter-tray.jpg",
+    "durationSeconds": 16
+  },
+  "fitCheck": [
+    {"question": "Do items scatter across your counter?", "recommendedIfYes": true},
+    {"question": "Do you want an easy reset system?", "recommendedIfYes": true},
+    {"question": "Is there at least 10 inches of counter space?", "recommendedIfYes": true}
+  ],
+  "kitOptions": [
+    {
+      "tier": "budget",
+      "label": "Simple tray reset",
+      "items": [
+        {"asin": "B000000078", "name": "Waterproof counter tray", "why": "Defines the daily zone.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000079", "name": "Mini acrylic cups", "why": "Holds brushes and tools upright.", "quantity": 2, "isPlaceholder": true},
+        {"asin": "B000000080", "name": "Quick-dry cloths", "why": "Wipes the tray daily.", "quantity": 1, "isPlaceholder": true}
+      ]
+    },
+    {
+      "tier": "premium",
+      "label": "Expanded vanity set",
+      "items": [
+        {"asin": "B000000081", "name": "Large resin vanity tray", "why": "Fits multiple daily items.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000082", "name": "Stackable organizers", "why": "Adds vertical storage.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000083", "name": "Soap pump bottle set", "why": "Streamlines clutter.", "quantity": 1, "isPlaceholder": true}
+      ]
+    }
+  ],
+  "toolsNeeded": ["Cleaning cloth"],
+  "measurements": ["Measure available counter width"],
+  "removalNotes": ["Rinse tray with warm water", "Dry organizer pieces fully"],
+  "steps": [
+    "Clear the counter and wipe it dry.",
+    "Place the tray near the sink for daily items.",
+    "Group tall tools in cups.",
+    "Reset the tray nightly to keep clutter down."
+  ],
+  "mistakes": [
+    "Choosing a tray that's too deep for the space.",
+    "Letting water collect under containers." 
+  ],
+  "faqs": [
+    {"q": "Will a tray trap moisture?", "a": "Wipe it nightly and lift it weekly to clean underneath."}
+  ],
+  "updatedAt": "2025-02-06T13:00:00.000Z",
+  "seo": {
+    "title": "Bathroom Counter Tray Reset | FixFlicks",
+    "description": "A tidy vanity setup with trays and organizers that keeps counters clean.",
+    "ogImage": "/images/og/bathroom-counter-tray.jpg"
+  }
+}

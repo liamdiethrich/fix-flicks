@@ -1,43 +1,63 @@
 {
   "slug": "closet-shelf-stability",
-  "title": "Closet Shelf Stability Kit",
-  "summary": "Reduce wobble on wire closet shelves with braces and shelf liners that spread weight.",
+  "title": "Closet Shelf Stability Boost",
+  "summary": "Reduce wobble in wire shelves with stabilizers and liner strips.",
   "room": "closet",
-  "tags": ["storage", "shelf", "closet"],
+  "tags": ["closet", "storage", "renterSafe"],
   "renterSafe": true,
-  "noDrill": false,
-  "timeMinutes": 35,
-  "difficulty": "medium",
+  "noDrill": true,
+  "timeMinutes": 25,
+  "difficulty": "easy",
   "heroVideo": {
     "src": "/videos/closet-shelf-stability.mp4",
     "poster": "/images/closet-shelf-stability.jpg",
-    "durationSeconds": 28
+    "durationSeconds": 20
   },
   "fitCheck": [
-    {"question": "Do your wire shelves sag in the middle?", "recommendedIfYes": true},
-    {"question": "Can you use small screws with landlord approval?", "recommendedIfYes": true},
-    {"question": "Are you storing heavier items like bins?", "recommendedIfYes": true}
+    {"question": "Does your wire shelf bounce when loaded?", "recommendedIfYes": true},
+    {"question": "Do you want to avoid drilling into walls?", "recommendedIfYes": true},
+    {"question": "Is your shelf metal wire?", "recommendedIfYes": true}
   ],
-  "kit": [
-    {"asin": "B000000009", "name": "Wire shelf support brackets", "why": "Adds mid-span support to reduce sag.", "quantity": 2, "isPlaceholder": true},
-    {"asin": "B000000010", "name": "Closet shelf liner", "why": "Spreads weight and keeps items flat.", "quantity": 1, "isPlaceholder": true},
-    {"asin": "B000000011", "name": "Wall anchors and screws", "why": "Secure the support brackets safely.", "quantity": 1, "isPlaceholder": true}
+  "kitOptions": [
+    {
+      "tier": "budget",
+      "label": "Stabilize with liners",
+      "items": [
+        {"asin": "B000000030", "name": "Wire shelf liner roll", "why": "Adds grip and spreads weight.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000031", "name": "Non-slip pads", "why": "Keeps bins from sliding.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000032", "name": "Cable ties", "why": "Secures loose shelf joints.", "quantity": 1, "isPlaceholder": true}
+      ]
+    },
+    {
+      "tier": "best",
+      "label": "Add shelf braces",
+      "items": [
+        {"asin": "B000000033", "name": "Adjustable shelf stabilizers", "why": "Supports mid-span sag.", "quantity": 2, "isPlaceholder": true},
+        {"asin": "B000000034", "name": "Wire shelf liner roll", "why": "Adds grip and spreads weight.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000035", "name": "Heavy-duty zip ties", "why": "Locks wire joints in place.", "quantity": 1, "isPlaceholder": true}
+      ]
+    }
   ],
+  "toolsNeeded": ["Tape measure", "Scissors"],
+  "measurements": ["Measure shelf depth", "Count support points"],
+  "removalNotes": ["Cut zip ties with snips", "Wipe shelf with warm soapy water"],
   "steps": [
-    "Mark the center of the shelf span on the wall.",
-    "Install the support bracket with anchors and screws.",
-    "Clip the shelf into the bracket for extra support.",
-    "Lay the shelf liner to prevent items from tipping."
+    "Remove items and clean the shelf.",
+    "Add shelf liner strips to the top surface.",
+    "Install stabilizers or braces under the shelf midpoint.",
+    "Secure wire joints with zip ties and reload evenly."
   ],
   "mistakes": [
-    "Skipping anchors can cause the bracket to loosen.",
-    "Overloading the shelf beyond its rating risks failure."
+    "Overloading the center before adding support.",
+    "Skipping liner makes smaller items tip." 
   ],
-  "faqs": [],
-  "updatedAt": "2025-01-02T11:15:00.000Z",
+  "faqs": [
+    {"q": "Will stabilizers damage the wall?", "a": "Most clip-on supports avoid wall contact and remain renter-safe."}
+  ],
+  "updatedAt": "2025-02-03T10:15:00.000Z",
   "seo": {
-    "title": "Closet Shelf Stability Kit | FixFlicks",
-    "description": "Stabilize wire closet shelves with support brackets and liners.",
+    "title": "Closet Shelf Stability Boost | FixFlicks",
+    "description": "Stop wire shelves from wobbling with a renter-safe stabilization kit.",
     "ogImage": "/images/og/closet-shelf-stability.jpg"
   }
 }

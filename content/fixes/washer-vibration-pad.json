@@ -1,0 +1,63 @@
+{
+  "slug": "washer-vibration-pad",
+  "title": "Washer Vibration Pads",
+  "summary": "Reduce washer shake with anti-vibration pads and leveling tools.",
+  "room": "laundry",
+  "tags": ["laundry", "noise", "renterSafe"],
+  "renterSafe": true,
+  "noDrill": true,
+  "timeMinutes": 25,
+  "difficulty": "medium",
+  "heroVideo": {
+    "src": "/videos/washer-vibration-pad.mp4",
+    "poster": "/images/washer-vibration-pad.jpg",
+    "durationSeconds": 20
+  },
+  "fitCheck": [
+    {"question": "Does the washer walk or shake?", "recommendedIfYes": true},
+    {"question": "Is the floor hard tile or wood?", "recommendedIfYes": true},
+    {"question": "Can you access the washer feet?", "recommendedIfYes": true}
+  ],
+  "kitOptions": [
+    {
+      "tier": "best",
+      "label": "Stabilize with pads",
+      "items": [
+        {"asin": "B000000102", "name": "Anti-vibration washer pads", "why": "Dampens shaking on hard floors.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000103", "name": "Rubber leveling shims", "why": "Fine-tunes washer leveling.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000104", "name": "Compact bubble level", "why": "Checks front-to-back level.", "quantity": 1, "isPlaceholder": true}
+      ]
+    },
+    {
+      "tier": "premium",
+      "label": "Heavy-duty stabilization",
+      "items": [
+        {"asin": "B000000105", "name": "Heavy-duty vibration pads", "why": "Supports heavier machines.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000106", "name": "Washer anti-walk mat", "why": "Prevents sliding.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000107", "name": "Compact bubble level", "why": "Confirms proper leveling.", "quantity": 1, "isPlaceholder": true}
+      ]
+    }
+  ],
+  "toolsNeeded": ["Adjustable wrench", "Bubble level"],
+  "measurements": ["Check washer footprint", "Measure clearance from walls"],
+  "removalNotes": ["Lift washer carefully with help", "Store pads flat for reuse"],
+  "steps": [
+    "Unplug the washer and pull it forward.",
+    "Place vibration pads under each foot.",
+    "Use the level to adjust the feet evenly.",
+    "Slide the washer back and test a small load."
+  ],
+  "mistakes": [
+    "Skipping leveling keeps the shake.",
+    "Pushing the washer against the wall causes knocking." 
+  ],
+  "faqs": [
+    {"q": "Will pads work on carpet?", "a": "Use thicker pads or a mat to spread the load on carpet."}
+  ],
+  "updatedAt": "2025-02-06T17:30:00.000Z",
+  "seo": {
+    "title": "Washer Vibration Pads | FixFlicks",
+    "description": "Reduce washer shaking with pads, shims, and leveling tools.",
+    "ogImage": "/images/og/washer-vibration-pad.jpg"
+  }
+}

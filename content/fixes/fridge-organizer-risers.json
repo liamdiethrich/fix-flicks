@@ -1,0 +1,63 @@
+{
+  "slug": "fridge-organizer-risers",
+  "title": "Fridge Organizer Risers",
+  "summary": "Stack snacks and condiments with clear risers to stop fridge clutter.",
+  "room": "kitchen",
+  "tags": ["fridge", "organization", "storage"],
+  "renterSafe": true,
+  "noDrill": true,
+  "timeMinutes": 25,
+  "difficulty": "easy",
+  "heroVideo": {
+    "src": "/videos/fridge-organizer-risers.mp4",
+    "poster": "/images/fridge-organizer-risers.jpg",
+    "durationSeconds": 20
+  },
+  "fitCheck": [
+    {"question": "Do you lose items in the back of the fridge?", "recommendedIfYes": true},
+    {"question": "Is your fridge shelf height adjustable?", "recommendedIfYes": true},
+    {"question": "Do you want clear organizers?", "recommendedIfYes": true}
+  ],
+  "kitOptions": [
+    {
+      "tier": "budget",
+      "label": "Stackable starter set",
+      "items": [
+        {"asin": "B000000066", "name": "Clear fridge risers", "why": "Creates a second shelf level.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000067", "name": "Label strips", "why": "Keeps zones consistent.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000068", "name": "Mini storage bins", "why": "Groups snacks by category.", "quantity": 2, "isPlaceholder": true}
+      ]
+    },
+    {
+      "tier": "premium",
+      "label": "Full fridge reset",
+      "items": [
+        {"asin": "B000000069", "name": "Tiered fridge risers", "why": "Adds two layers of visibility.", "quantity": 1, "isPlaceholder": true},
+        {"asin": "B000000070", "name": "Clear pull-out bins", "why": "Slides snacks forward.", "quantity": 2, "isPlaceholder": true},
+        {"asin": "B000000071", "name": "Slim can organizer", "why": "Keeps drinks upright.", "quantity": 1, "isPlaceholder": true}
+      ]
+    }
+  ],
+  "toolsNeeded": ["Cleaning cloth"],
+  "measurements": ["Measure shelf depth", "Check shelf height clearance"],
+  "removalNotes": ["Wipe organizers with warm soapy water", "Let bins dry before restocking"],
+  "steps": [
+    "Empty one shelf and wipe down the surface.",
+    "Place risers at the back to raise smaller items.",
+    "Group items into bins by category.",
+    "Label zones to keep restocks consistent."
+  ],
+  "mistakes": [
+    "Overfilling bins makes them hard to slide.",
+    "Ignoring shelf clearance leads to squished items." 
+  ],
+  "faqs": [
+    {"q": "Will this fit a mini fridge?", "a": "Use a single riser and shallow bins for smaller shelves."}
+  ],
+  "updatedAt": "2025-02-06T10:30:00.000Z",
+  "seo": {
+    "title": "Fridge Organizer Risers | FixFlicks",
+    "description": "Stackable risers and bins that keep fridge items visible and tidy.",
+    "ogImage": "/images/og/fridge-organizer-risers.jpg"
+  }
+}
